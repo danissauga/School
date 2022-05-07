@@ -4,7 +4,7 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class StudentFactory extends Factory
+class GroupFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -15,10 +15,6 @@ class StudentFactory extends Factory
     {
         return [
             'name' => $this->faker->FirstName(),
-            'surname' => $this->faker->unique()->lastName(),
-            'email' => $this->faker->unique()->safeEmail(),
-            'group_id' => $this->faker->numberBetween(1,6),
-
         ];
     }
 }
