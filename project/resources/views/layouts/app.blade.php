@@ -80,6 +80,6 @@
             @yield('content')
         </main>
     </div>
-    @extends('components.modal'); 
+    @extends('components.modal')
 </body>
 </html>

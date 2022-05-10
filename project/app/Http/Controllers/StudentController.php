@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\student;
+use App\Models\group;
 use App\Http\Requests\StorestudentRequest;
 use App\Http\Requests\UpdatestudentRequest;
 
@@ -15,7 +16,11 @@ class StudentController extends Controller
      */
     public function index()
     {
-        return view('student.index');
+        $groups = Group::all();
+        
+        return view('student.index',[
+            'groups' =>$groups
+        ]);
     }
 
     /**
@@ -25,7 +30,7 @@ class StudentController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -34,7 +39,7 @@ class StudentController extends Controller
      * @param  \App\Http\Requests\StorestudentRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StorestudentRequest $request)
+    public function store(Request $request)
     {
         //
     }

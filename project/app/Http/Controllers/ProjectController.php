@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\project;
+use App\Models\group;
 use App\Http\Requests\StoreprojectRequest;
 use App\Http\Requests\UpdateprojectRequest;
 
@@ -104,7 +105,7 @@ class ProjectController extends Controller
     }
 
         $json_response =response()->json($project_array); 
-       // return $json_response;
+       // return $json_response
        return view('project.index');
     }
 
@@ -116,7 +117,12 @@ class ProjectController extends Controller
      */
     public function show(project $project)
     {
-        //
+        $groups = Group::all();
+
+        return view('project.show',[
+            'project'=>$project,
+            'groups' =>$groups
+        ]);
     }
 
     /**
@@ -127,7 +133,7 @@ class ProjectController extends Controller
      */
     public function edit(project $project)
     {
-        //
+       
     }
 
     /**

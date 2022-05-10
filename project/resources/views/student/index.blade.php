@@ -34,8 +34,15 @@
                    </td>
                </tr>  
            </table>  
+Asign students to the group
+           
+Group:  <select class="form-select" name="group_id">
+                @foreach ($groups as $group)
+                        <option value="{{ $group->id }}">{{ $group->title }}</option>
+                @endforeach
+            </select>
 
-       </div>
+</div>
        <script>
 
            $(document).ready(function(){
