@@ -41,7 +41,7 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**
@@ -87,5 +87,20 @@ class StudentController extends Controller
     public function destroy(student $student)
     {
         //
+    }
+
+    public function loadDataFromApi() {
+        $curl = curl_init();
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => "http://127.0.0.1:8000/api/students?csrf=123456789&studentsAll=all",
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_TIMEOUT => 30000,//ms
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+            CURLOPT_HTTPHEADER => array(
+                'Content-Type: application/json',
+            ),
+    ));
     }
 }
