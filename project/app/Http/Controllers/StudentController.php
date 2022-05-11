@@ -8,6 +8,10 @@ use App\Models\attendanceGroup;
 use App\Http\Requests\StorestudentRequest;
 use App\Http\Requests\UpdatestudentRequest;
 
+use Illuminate\Http\Request;
+use Validator;
+
+
 class StudentController extends Controller
 {
     /**
@@ -31,7 +35,8 @@ class StudentController extends Controller
      */
     public function create()
     {
-        
+        $students = Student::all(); 
+        return view('student.create');
     }
 
     /**
@@ -42,7 +47,12 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        
+        $student = new Student;
+        $student->name = $request->student_name;
+             
+
+        $student->save();
+        return redirect()->route('attendancegroup.index'); 
     }
 
     /**
