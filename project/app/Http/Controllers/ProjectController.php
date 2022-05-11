@@ -48,6 +48,8 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
+        $projects = Project::all();
+         
         $input = [
             'project_title'=> $request->project_title,
             'project_groups_number'=> $request->project_groups_number,
@@ -106,7 +108,7 @@ class ProjectController extends Controller
 
         $json_response =response()->json($project_array); 
        // return $json_response
-       return view('project.index');
+       return view('project.index', ['projects' => $projects]);
     }
 
     /**

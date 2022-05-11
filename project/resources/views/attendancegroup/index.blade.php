@@ -57,20 +57,22 @@
       
 
     
-    <table class="table table-striped">
-            <tr>
-                <th>ID</th>
-                <th>Group</th>
-                <th>Student</th>
-                                
-                <th class="col-2" colspan="3">Action</th>
-            </tr>
-           
+             
             @foreach ($attendancegroups as $attendancegroup)
-                <tr>
-                    <td>{{ $attendancegroup->id }}</td>
-                    <td>{{ $attendancegroup->getStudentGroup->title }}</td>
-                    <td>{{ $attendancegroup->getStudent->name }}</td>
+           @if ()
+            <table class="table table-striped">
+                    <tr>
+                        <th>ID</th>
+                        <th>Group</th>
+                        <th>Student</th>
+                                        
+                        <th class="col-2" colspan="3">Action</th>
+                    </tr>
+            
+            <tr>
+                    <td class="col-sm-3">{{ $attendancegroup->id }}</td>
+                    <td class="col-sm-3">{{ $attendancegroup->getStudentGroup->title }}</td>
+                    <td class="col-sm-3">{{ $attendancegroup->getStudent->name }}</td>
                    
                         
                     <td><a class="btn btn-primary" href="{{route('attendancegroup.show', [$attendancegroup])}}">Show</a></td>
@@ -82,7 +84,8 @@
                         </form>
                     </td>
                 </tr>
+                </table>
             @endforeach
-    </table>
+
 </div>
 @endsection
