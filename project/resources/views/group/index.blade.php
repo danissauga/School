@@ -35,9 +35,7 @@
                 
                 <th class="col-2" colspan="3">Action</th>
             </tr>
-           
-
-
+            
             @foreach ($groups as $group)
                 <tr>
                     <td>{{ $group->id }}</td>
