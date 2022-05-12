@@ -135,7 +135,8 @@ class ProjectController extends Controller
      */
     public function edit(project $project)
     {
-       
+        return view('project.edit', ['project' => $project]);
+
     }
 
     /**
@@ -145,9 +146,16 @@ class ProjectController extends Controller
      * @param  \App\Models\project  $project
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateprojectRequest $request, project $project)
+    public function update(Request $request, project $project)
     {
-        //
+            
+            $project->title = $request->project_title;
+            $project->groups_number = $request->project_groups_number;
+            $project->students_number = $request->project_students_number;
+          
+        
+            $project->save();
+            return redirect()->route('project.index');
     }
 
     /**
