@@ -46,7 +46,6 @@ class AttendanceGroupController extends Controller
             'attendancegroups'=>$attendancegroups,
             'groups' => $groups,
             'students' =>$students,
-
         ]);
     }
 
@@ -58,6 +57,8 @@ class AttendanceGroupController extends Controller
      */
     public function store(Request $request)
     {
+       
+       
         $attendancegroup = new Attendancegroup;
         $attendancegroup->group_id = $request->group_id;
         $attendancegroup->student_id = $request->student_id;

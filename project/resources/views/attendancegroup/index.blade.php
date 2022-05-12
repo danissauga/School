@@ -59,7 +59,7 @@
     
              
             @foreach ($attendancegroups as $attendancegroup)
-           @if ()
+         
             <table class="table table-striped">
                     <tr>
                         <th>ID</th>

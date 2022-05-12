@@ -13,6 +13,7 @@
             @csrf
     </form>
     <a class="btn btn-secondary" href="{{route('project.index') }}">Back to projects list</a>
+    <a class="btn btn-primary" href="{{route('group.create') }}">Create group</a>
     
 </br>
 </br>
