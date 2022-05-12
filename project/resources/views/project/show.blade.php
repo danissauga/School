@@ -32,7 +32,7 @@
                     <td>{{ $group->title }}</td>
                     <td>{{ $group->student_number }}</td>
                      
-                    <td><a class="btn btn-primary" href="{{route('group.show', [$group])}}">Show</a></td>
+                    <td><a class="btn btn-primary" href="{{route('group.show', [$group])}}">Show and add students</a></td>
                     <td><a class="btn btn-secondary" href="{{route('group.edit', [$group])}}">Edit</a></td>
                     <td>
                         <form method="post" action="{{route('group.destroy', [$group])}}">
