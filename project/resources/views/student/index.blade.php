@@ -2,38 +2,32 @@
 @section('content')
 
 <div class = "container">
+<a class="btn btn-secondary" href="{{route('group.index') }}">Back to groups</a>         
+    <table class="table table-striped">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th class="col-2" colspan="3">Action</th>
+            </tr>
            
-           <table id= "students" class = "table table-striped">
-               <thead>
-                   <tr>
-                       <th>ID</th>
-                       <th>Name</th>
-                       <th>Surname</th>
-                       <th>Email</th>
-                       <!-- <th>Group ID</th> -->
-                       <th>Actions</th>
-                   </tr>
-               </thead>
-               <tbody>
+            @foreach ($students as $student)
+                <tr>
+                    <td>{{ $student->id }}</td>
+                    <td>{{ $student->name }}</td>
                    
-               </tbody>
+                        
+                    <td><a class="btn btn-primary" href="{{route('student.show', [$student])}}">Show</a></td>
+                    <td><a class="btn btn-secondary" href="{{route('student.edit', [$student])}}">Edit</a></td>
+                    <td>
+                        <form method="post" action="{{route('student.destroy', [$student])}}">
+                            <button class="btn btn-danger" type="submit">Delete</button>
+                            @csrf
+                        </form>
+                    </td>
+                </tr>
+            @endforeach
+    </table>
 
-           </table>
-
-           <table class="template d-none">
-               <tr>
-                   <td class="col-student-id"></td>
-                   <td class="col-student-name"></td>
-                   <td class="col-student-surname"></td>
-                   <td class="col-student-email"></td>
-                   <!-- <td class="col-student-group"></td> -->
-                   <td>
-                       <button class="btn btn-danger delete-student" type="submit" data-studentid="">DELETE</button>
-                       <button type="button" class="btn btn-primary show-student" data-bs-toggle="modal" data-bs-target="#showStudentModal" data-studentid="">Show</button>
-                       <button type="button" class="btn btn-secondary edit-student" data-bs-toggle="modal" data-bs-target="#editStudentModal" data-studentid="">Edit</button>
-                   </td>
-               </tr>  
-           </table>  
 Asign students to the group
            
 Group:  <select class="form-select" name="group_id">

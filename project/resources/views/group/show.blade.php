@@ -2,21 +2,24 @@
 @section('content')
 
 <div class="container">
-    <h1>Project details</h1>
+<a class="btn btn-secondary" href="{{route('project.index') }}">Back to projects list</a>
+    <h1>Group details</h1>
     
-    <p>ID: {{$project->id}}</p>
-    <p>Project title: {{ $project->title }}</p>
-    <p>Number of groups: {{ $project->groups_number }}</p>
-    <p>Student per group: {{ $project->students_number }}</p>
-    <form method="post" action="{{route('project.destroy', [$project])}}">
-                <button class="btn btn-danger" type="submit">Delete project</button>
+    <p>ID: {{$group->id}}</p>
+    <p>Project: {{$group->getProject->title}}</p>
+    <p>Group title: {{ $group->title }}</p>
+    <p>Student per group: {{ $group->student_number }}</p>
+   
+           
+    
+    <form method="post" action="{{route('group.destroy', [$group])}}">
+                <button class="btn btn-danger" type="submit">Delete group</button>
             @csrf
     </form>
-    <a class="btn btn-secondary" href="{{route('project.index') }}">Back to projects list</a>
-    <a class="btn btn-primary" href="{{route('group.create') }}">Create group</a>
     
-</br>
-</br>
+    <a class="btn btn-primary" href="{{route('student.index') }}">Add students to the {{ $group->title }} group</a>
+    
+
     
 </div>
    

@@ -21,10 +21,13 @@ class StudentController extends Controller
      */
     public function index()
     {
+        $students = Student::all();
         $groups = Group::all();
         
         return view('student.index',[
-            'groups' =>$groups
+            'groups' =>$groups,
+            
+            'students' => $students,
         ]);
     }
 

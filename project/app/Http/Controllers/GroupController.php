@@ -59,7 +59,13 @@ class GroupController extends Controller
      */
     public function show(group $group)
     {
-        //
+        $groups = Group::all();
+
+        return view('group.show',[
+            'group'=>$group,
+           
+            
+        ]);
     }
 
     /**
