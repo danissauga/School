@@ -8,20 +8,18 @@
 
     <h1>Project group list</h1>
         <a class="btn btn-primary" href="{{route('group.create') }}">Add group </a>
-      
-    </div> 
-
+        
         @if (session()->has('error_message'))
-        <div class="alert alert-danger">
-            {{session()->get('error_message')}}
-        </div>
+            <div class="alert alert-danger">
+                {{session()->get('error_message')}}
+            </div>
         @endif
 
         @if (session()->has('success_message'))
-                <div class="alert alert-success">
-                    {{session()->get('success_message')}}
-                    success_message
-                </div>
+            <div class="alert alert-success">
+                {{session()->get('success_message')}}
+                success_message
+            </div>
         @endif
 
         @if (count($groups) == 0)
