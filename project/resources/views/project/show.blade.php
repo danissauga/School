@@ -2,6 +2,11 @@
 @section('content')
 
 <div class="container">
+
+<a class="btn btn-secondary" href="{{route('project.index') }}">Projects list</a>
+<a class="btn btn-secondary" href="{{route('group.index') }}">Group list</a>
+<a class="btn btn-secondary" href="{{route('student.index') }}">Student list</a>
+
     <h1>Project details</h1>
     
     <p>ID: {{$project->id}}</p>
@@ -12,7 +17,7 @@
                 <button class="btn btn-danger" type="submit">Delete project</button>
             @csrf
     </form>
-    <a class="btn btn-secondary" href="{{route('project.index') }}">Back to projects list</a>
+  
     <a class="btn btn-primary" href="{{route('group.create') }}">Create group</a>
     
 </br>

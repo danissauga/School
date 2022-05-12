@@ -76,7 +76,7 @@ class GroupController extends Controller
      */
     public function edit(group $group)
     {
-        //
+        return view('group.edit', ['group' => $group]);
     }
 
     /**
@@ -86,9 +86,15 @@ class GroupController extends Controller
      * @param  \App\Models\group  $group
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdategroupRequest $request, group $group)
+    public function update(Request $request, group $group)
     {
-        //
+        $group->title = $request->group_title;
+        $group->student_number = $request->group_student_number;
+        $group->project_id = $request->group_project_id;
+        
+
+        $group->save();
+        return redirect()->route('group.index'); 
     }
 
     /**

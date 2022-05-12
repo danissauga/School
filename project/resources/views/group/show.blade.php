@@ -2,7 +2,10 @@
 @section('content')
 
 <div class="container">
-<a class="btn btn-secondary" href="{{route('project.index') }}">Back to projects list</a>
+<a class="btn btn-secondary" href="{{route('project.index') }}">Projects list</a>
+<a class="btn btn-secondary" href="{{route('group.index') }}">Group list</a>
+<a class="btn btn-secondary" href="{{route('student.index') }}">Student list</a>
+
     <h1>Group details</h1>
     
     <p>ID: {{$group->id}}</p>

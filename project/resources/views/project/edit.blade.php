@@ -2,6 +2,10 @@
 @section('content')
 
 <div class="container">
+<a class="btn btn-secondary" href="{{route('project.index') }}">Projects list</a>
+<a class="btn btn-secondary" href="{{route('group.index') }}">Group list</a>
+<a class="btn btn-secondary" href="{{route('student.index') }}">Student list</a>
+
 <h1>Edit project </h1>
     
 <form class="form-control" action="{{ route('project.update',['project'=>$project]) }}" method="POST">
@@ -12,7 +16,7 @@ Students per group: <input class="form-control" name="project_students_number" t
 @csrf
 
 <input class="btn btn-primary" type="submit" value="Update">
-<a class="btn btn-secondary" href="{{ route('project.index') }}">Back to list</a>
+
 
 </form>
 </div>

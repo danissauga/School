@@ -2,6 +2,10 @@
 
 @section('content')
 <div class="container">
+<a class="btn btn-secondary" href="{{route('project.index') }}">Projects list</a>
+<a class="btn btn-secondary" href="{{route('group.index') }}">Group list</a>
+<a class="btn btn-secondary" href="{{route('student.index') }}">Student list</a>
+
     <form method="POST" action="{{ route('project.store')}}">
         @csrf
         <div class="form-group">

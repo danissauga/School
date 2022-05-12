@@ -2,11 +2,13 @@
 @section('content')
 
 <div class="container">
+<a class="btn btn-secondary" href="{{route('project.index') }}">Projects list</a>
+<a class="btn btn-secondary" href="{{route('group.index') }}">Group list</a>
+<a class="btn btn-secondary" href="{{route('student.index') }}">Student list</a>
+
     <h1>Project group list</h1>
-    
-        <a class="btn btn-primary" href="{{route('student.create') }}">Add student</a>
         <a class="btn btn-primary" href="{{route('group.create') }}">Add group </a>
-        <a class="btn btn-secondary" href="{{route('student.index') }}">Student list</a>
+      
     </div> 
 
         @if (session()->has('error_message'))
@@ -30,8 +32,8 @@
             <tr>
                 <th>ID</th>
                 <th>Title</th>
-                <th>Student</th>
-                <th>Project</th>
+                <th>Students per group</th>
+                <th>Project title</th>
                 
                 <th class="col-2" colspan="3">Action</th>
             </tr>

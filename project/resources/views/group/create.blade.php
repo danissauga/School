@@ -2,6 +2,10 @@
 @section('content')
 
 <div class="container">
+<a class="btn btn-secondary" href="{{route('project.index') }}">Projects list</a>
+<a class="btn btn-secondary" href="{{route('group.index') }}">Group list</a>
+<a class="btn btn-secondary" href="{{route('student.index') }}">Student list</a>
+
     <h1>Add group</h1>
 
 <form class="form-control" action="{{ route('group.store') }}" method="POST">

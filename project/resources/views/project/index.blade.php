@@ -1,7 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="container">
 
+<a class="btn btn-secondary" href="{{route('project.index') }}">Projects list</a>
+<a class="btn btn-secondary" href="{{route('group.index') }}">Group list</a>
+<a class="btn btn-secondary" href="{{route('student.index') }}">Student list</a>
 <h1> PROJECTS </h1>
 
         @if (count($projects) == 0)
@@ -39,6 +43,6 @@
         @endforeach
      
     </table>
-
+</div>
 @endsection
 
